@@ -1,7 +1,7 @@
-const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const { Client } = require("pg");
+import express, {Request, Response} from "express";
+import morgan from "morgan";
+import helmet from "helmet";
+import { Client } from "pg";
 
 async function main() {
   const app = express();
@@ -18,9 +18,9 @@ async function main() {
 
   await client.connect();
 
-  app.get("/", async (req, res) => {
+  app.get("/", async (req: Request, res: Response) => {
     const result = await client.query("SELECT $1::text as message", [
-      "Hello world!!",
+      "Hello world!",
     ]);
     res.send({
       message: result.rows[0].message,
