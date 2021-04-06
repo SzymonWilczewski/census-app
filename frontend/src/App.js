@@ -1,9 +1,12 @@
-import './App.css';
+import "./App.css";
+import Navbar from "./ui/Navbar";
+import Home from "./ui/Home";
 
 function App() {
   return (
     <div className="App">
-      Front
+      <Navbar />
+      <Home />
     </div>
   );
 }
