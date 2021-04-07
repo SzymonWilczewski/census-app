@@ -1,14 +1,13 @@
 import express, { NextFunction, Request, Response } from "express";
+import createError, { HttpError } from "http-errors";
 import { createConnection, Connection } from "typeorm";
+import asyncHandler from "express-async-handler";
 import morgan from "morgan";
 import helmet from "helmet";
-import asyncHandler from "express-async-handler";
 import cors from "cors";
 
 createConnection().then(async (connection: Connection) => {
-
   const port = process.env.PORT || 8080;
-
   const app = express();
 
   app.use(express.json());
@@ -22,7 +21,6 @@ createConnection().then(async (connection: Connection) => {
   app.get(
     "/",
     asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-      if (Math.random() > 0.5) throw Error("error");
       res.send({ message: "healtcheck" });
     })
   );
@@ -31,7 +29,18 @@ createConnection().then(async (connection: Connection) => {
     console.log(`server listening on port ${port}`);
   });
 
-  app.use(({ message, stack }: Error, req: Request, res: Response, next: NextFunction) => {
-    res.status(500).send({ error: message, status: res.statusCode });
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    next(createError(404));
   });
+
+  app.use(
+    (
+      { message, status }: HttpError,
+      req: Request,
+      res: Response,
+      next: NextFunction
+    ) => {
+      res.status(status || 500).send({ message, status });
+    }
+  );
 });
