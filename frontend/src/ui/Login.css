@@ -1,0 +1,36 @@
+.LoginContainer {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 76px);
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .Label {
+    width: 100%;
+    font-size: large;
+  }
+
+  .LoginBox {
+      width: 97%;
+  }
+  
+  .LoginButton {
+    border: 1px black solid;
+    border-radius: 5px;
+    transition: 0.3s;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: large;
+  }
+  
+  .LoginButton:hover {
+    background-color: navy;
+    color: white;
+  }
