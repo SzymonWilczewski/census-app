@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import asyncHandler from "express-async-handler";
 import createError from "http-errors";
-import * as service from "./auth.service";
+import * as service from "./service";
 
 export const login = asyncHandler(async (req: Request, res: Response) => {
   const { login, password } = req.body;

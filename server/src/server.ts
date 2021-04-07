@@ -6,7 +6,7 @@ import cors from "cors";
 import session from "express-session";
 import redis from "redis";
 import connectRedis from "connect-redis";
-import authRouter from "./components/auth/auth.routes";
+import authRouter from "./components/auth/routes";
 
 const server: Application = express();
 
