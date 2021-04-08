@@ -4,7 +4,7 @@ const Home = () => (
   <div className="Home">
     <div className="Login">
       <p>Proszę wybrać metodę logowania</p>
-      <a href="/" className="LoginButton">
+      <a href="/login" className="LoginButton">
         Administrator
       </a>
       <a href="/" className="LoginButton">
