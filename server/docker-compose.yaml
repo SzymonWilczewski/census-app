@@ -1,24 +1,31 @@
-version: "3.8"
+version: "3.7"
 services:
   web:
     build: .
-    depends_on: 
+    depends_on:
       - postgres
-    environment: 
+    environment:
       DATABASE_URL: postgres://user:pass@postgres:5432/db
+      REDIS_URL: redis://redis:6379
+      CLIENT_URL: http://localhost:8082
+      SESSION_SECRET: secret
       NODE_ENV: dev
-      PORT: 8080
+      PORT: 8081
     ports:
-      - "8080:8080"
+      - "8081:8081"
     command: npm run dev
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
   postgres:
-    image: postgres
+    image: postgres:13
     ports:
       - "35432:5432"
-    environment: 
+    environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: db
+  redis:
+    image: redis
+    ports:
+      - "36379:6379"
