@@ -5,9 +5,9 @@ import * as service from "./service";
 
 export const login = asyncHandler(async (req: Request, res: Response) => {
   const { login, password } = req.body;
-  const id = await service.login(login, password);
-  req.session.sessionId = id;
-  res.send({ message: "logged in" });
+  const user = await service.login(login, password);
+  req.session.sessionId = user.id;
+  res.send({ message: "logged in", user });
 });
 
 export const register = asyncHandler(async (req: Request, res: Response) => {
@@ -24,5 +24,6 @@ export const logout = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const isAuth = asyncHandler(async (req: Request, res: Response) => {
-  res.send({ message: "authenticated" });
+  const user = await service.getUserById(req.session.sessionId);
+  res.send({ message: "authenticated", user });
 });
