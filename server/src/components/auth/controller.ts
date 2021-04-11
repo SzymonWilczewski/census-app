@@ -4,15 +4,17 @@ import createError from "http-errors";
 import * as service from "./service";
 
 export const login = asyncHandler(async (req: Request, res: Response) => {
-  const { login, password } = req.body;
-  const user = await service.login(login, password);
+  const user = await service.login(req.body);
   req.session.sessionId = user.id;
   res.send({ message: "logged in", user });
 });
 
 export const register = asyncHandler(async (req: Request, res: Response) => {
-  const { email, login, password } = req.body;
-  const user = await service.register(email, login, password);
+  const { password, passwordConfirmation } = req.body;
+  if (password !== passwordConfirmation) {
+    throw createError(401, "password doesn't match with password confirmation");
+  }
+  const user = await service.register(req.body);
   res.send({ message: "registered", user });
 });
 
