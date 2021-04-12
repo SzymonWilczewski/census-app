@@ -7,6 +7,7 @@ import session from "express-session";
 import redis from "redis";
 import connectRedis from "connect-redis";
 import authRouter from "./components/auth/routes";
+import surveyRouter from "./components/survey/routes";
 
 const server: Application = express();
 
@@ -46,6 +47,7 @@ server.use(
 );
 
 server.use("/auth", authRouter);
+server.use("/survey", surveyRouter);
 
 server.use((req: Request, res: Response, next: NextFunction) => {
   next(createError(404, `endpoint at ${req.path} not found`));
