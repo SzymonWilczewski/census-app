@@ -1,6 +1,13 @@
 import { getConnection } from "typeorm";
 import { Survey } from "../../entity/Survey";
 import createError from "http-errors";
+import { generateSurvey } from "../../utils/db-seed";
+
+export const seed = async function () {
+  const n = 100; // number of surveys to seed
+  const surveys: any = Array.from(Array(n).keys()).map(generateSurvey); // n random surveys
+  return await getConnection().getRepository(Survey).save(surveys);
+};
 
 export const add = async function (survey: any) {
   return await getConnection().getRepository(Survey).save(survey);

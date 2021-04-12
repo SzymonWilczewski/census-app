@@ -11,6 +11,7 @@ Endpoints
 
 ---
 
+- GET `/survey/seed`
 - GET `/survey`
 - GET `/survey/:id`
 - POST `/survey`
