@@ -23,3 +23,8 @@ export const update = asyncHandler(async (req: Request, res: Response) => {
   const survey = await service.update(parseInt(id), req.body);
   res.send({ message: "updated", survey });
 });
+
+export const seed = asyncHandler(async (req: Request, res: Response) => {
+  await service.seed();
+  res.send({ message: "seeded" });
+});
