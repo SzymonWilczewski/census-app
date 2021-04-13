@@ -42,6 +42,7 @@ const Login = ({ setUser }) => {
         Hasło
         <br />
         <input
+          type="password"
           className="LoginBox"
           onChange={(e) => handleChangePassword(e.target.value)}
         />

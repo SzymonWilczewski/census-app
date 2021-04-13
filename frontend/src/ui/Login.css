@@ -1,6 +1,5 @@
 .LoginContainer {
     display: flex;
-    width: 30%;
     justify-content: center;
     align-items: center;
     height: calc(100% - 76px);
@@ -11,10 +10,16 @@
   .Label {
     width: 80%;
     font-size: large;
+    display: flex;
+    flex-direction: column;
+    text-indent: 2px;
+    font-size: x-large;
   }
 
   .LoginBox {
-      width: 97%;
+      width: 95%;
+      font-size: x-large;
+      margin: auto;
   }
   
   .LoginButton {
@@ -23,11 +28,11 @@
     transition: 0.3s;
     padding: 10px;
     margin: 10px;
-    width: 100%;
+    width: 60%;
     text-decoration: none;
     color: black;
     text-align: center;
-    font-size: large;
+    font-size: x-large;
   }
   
   .LoginButton:hover {
