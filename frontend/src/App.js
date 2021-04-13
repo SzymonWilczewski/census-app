@@ -50,10 +50,9 @@ function App() {
         {user && (
           // tymczasowe wyswietlanie, zmiencie sobie to jakos potem
           <div>
-            <p>id: {user.id}</p>
-            <p>login: {user.login}</p>
-            <p>email: {user.email}</p>
-            <button onClick={logout}> wyloguj </button>
+            <p>login: {user.login} &nbsp;
+            email: {user.email} &nbsp;
+            <button onClick={logout}> wyloguj </button></p>
           </div>
         )}
         <Switch>

@@ -1,31 +1,30 @@
 import bcryptjs from "bcryptjs";
 import createError from "http-errors";
 import { getConnection } from "typeorm";
-import { User } from "../../entity/User";
+import { Role, User } from "../../entity/User";
 
 export const getUserById = async function (id: number) {
   const userRepository = getConnection().getRepository(User);
-  const user = await userRepository.findOne({
-    id,
-  });
-  // omits password from newly created user
-  const { password: omitted, ...rest } = user;
+  const user = await userRepository.findOne(id);
+
+  // omits password from user
+  const { password, ...rest } = user;
   return rest;
 };
 
-export const login = async function (login: string, password: string) {
+export const login = async function (user: any) {
   const userRepository = getConnection().getRepository(User);
-  const user = await userRepository.findOne({
-    login,
+  const dbUser = await userRepository.findOne({
+    login: user.login,
   });
 
-  if (!user) {
+  if (!dbUser) {
     throw createError(401, "user doesn't exist");
   }
 
   const isValidPassword: boolean = await bcryptjs.compareSync(
-    password,
-    user.password
+    user.password,
+    dbUser.password
   );
 
   if (!isValidPassword) {
@@ -33,36 +32,30 @@ export const login = async function (login: string, password: string) {
   }
 
   // omits password from newly created user
-  const { password: omitted, ...rest } = user;
+  const { password, ...rest } = dbUser;
   return rest;
 };
 
-export const register = async function (
-  email: string,
-  login: string,
-  password: string
-) {
+export const register = async function (user: any) {
   const userRepository = getConnection().getRepository(User);
 
   const isLoginOrEmailTaken = (
     await userRepository.find({
-      where: [{ login }, { email }],
+      where: [{ login: user.login }, { email: user.email }],
     })
   ).length;
 
   if (isLoginOrEmailTaken) {
-    throw createError(401, "login or email is taken");
+    throw createError(401, "login or email taken");
   }
 
-  const hashedPassword = await bcryptjs.hashSync(password, 10);
+  const hashedPassword = await bcryptjs.hashSync(user.password, 10);
+  const savedUser = await userRepository.save({
+    ...user,
+    password: hashedPassword,
+  });
 
-  const newUser = new User();
-  newUser.login = login;
-  newUser.email = email;
-  newUser.password = hashedPassword;
-  await userRepository.save(newUser);
-
-  // omits password from newly created user
-  const { password: omitted, ...rest } = newUser;
+  // omits password and passwordConfirmation from newly created user
+  const { password, passwordConfirmation, ...rest } = savedUser;
   return rest;
 };

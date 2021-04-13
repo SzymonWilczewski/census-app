@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 export enum MaritalStatus {
   SINGLE = "single",
@@ -9,12 +9,12 @@ export enum MaritalStatus {
 }
 
 export enum Education {
-  NONE = "none",                      // zadne
-  PRIMARY = "primary",                // podstawowe
+  NONE = "none", // zadne
+  PRIMARY = "primary", // podstawowe
   LOWER_SECONDARY = "lowerSecondary", // gimnazjalne
-  VOCATIONAL = "vocational",          // zawodowe
-  SECONDARY = "secondary",            // srednie
-  HIGHER = "higher",                  // wyzsze 
+  VOCATIONAL = "vocational", // zawodowe
+  SECONDARY = "secondary", // srednie
+  HIGHER = "higher", // wyzsze
 }
 
 export enum Sex {
@@ -27,21 +27,22 @@ export enum ProfessionalActivity {
   EMPLOYED = "employed",
   UNEMPLOYED = "unemployed",
   INACTIVE = "inactive",
-
 }
 
 @Entity()
 export class Survey {
-
   @PrimaryGeneratedColumn()
   id!: number;
 
   @Column({
     type: "enum",
     enum: Sex,
-    default: Sex.NONE
+    default: Sex.NONE,
   })
   sex!: Sex;
+
+  @Column()
+  pesel!: string;
 
   @Column()
   name!: string;
@@ -50,7 +51,7 @@ export class Survey {
   surname!: string;
 
   @Column()
-  yearOfBirth!: number;
+  dateOfBirth!: Date;
 
   @Column()
   countryOfBirth!: string;
@@ -58,27 +59,45 @@ export class Survey {
   @Column({
     type: "enum",
     enum: MaritalStatus,
-    default: MaritalStatus.SINGLE
+    default: MaritalStatus.SINGLE,
   })
-  maritalStatus!: MaritalStatus
+  maritalStatus!: MaritalStatus;
 
   @Column({
     type: "enum",
     enum: Education,
-    default: Education.NONE
+    default: Education.NONE,
   })
   education!: Education;
 
   @Column()
-  residentalAddress!: string;
+  address!: string;
 
   @Column()
-  permanentAddress!: string;
+  voivodeship!: string;
+
+  @Column()
+  children!: number;
 
   @Column({
     type: "enum",
     enum: ProfessionalActivity,
-    default: ProfessionalActivity.UNEMPLOYED
+    default: ProfessionalActivity.UNEMPLOYED,
   })
   professionalActiviy!: ProfessionalActivity;
+
+  @Column()
+  isDisabled!: boolean;
+
+  @Column()
+  earnings!: number;
+
+  @Column()
+  religion!: string;
+
+  @Column()
+  industry!: string;
+
+  @Column()
+  peopleInApartment!: number;
 }
