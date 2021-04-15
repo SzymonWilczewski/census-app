@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./ui/Navbar";
 import Home from "./ui/Home";
 import Login from "./ui/Login";
+import Statistics from './ui/Statistics';
 import { useEffect, useState } from "react";
 import {
   Route,
@@ -58,6 +59,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" render={() => <Login setUser={setUser} />} />
+          <Route path="/statistics" exact component={Statistics} />
           <Redirect to={"/"} />
         </Switch>
       </div>

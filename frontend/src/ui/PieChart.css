@@ -1,0 +1,7 @@
+.pie-titles {
+    display: grid;
+    grid-template-columns: 290px 280px 200px;
+}
+h3{
+    padding-left: 60px;
+}
