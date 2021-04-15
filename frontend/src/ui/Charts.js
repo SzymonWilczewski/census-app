@@ -57,7 +57,9 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
     return (
         <div className="chartContainer">
+          <div>
         <h3>Struktura wykształcenie ludności Polski:</h3>
+        <h3>Średnia w Polsce:</h3>
         <PieChart width={400} height={260} >
           <Pie
             data={polandEduData}
@@ -75,10 +77,12 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
           </Pie>
            <Legend/>
            </PieChart>
+           </div>
+           <div>
            <div className="pie-titles">
-           <h3>Mazowieckie</h3>
-           <h3>Pomorskie</h3>
-           <h3>Warmińsko-mazurskie</h3>
+           <h3>Mazowieckie:</h3>
+           <h3>Pomorskie:</h3>
+           <h3>Warmińsko-mazurskie:</h3>
            </div>
            <PieChart width={900} height={300} >
           <Pie
@@ -124,6 +128,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
             ))}
           </Pie>
         </PieChart>
+        </div>
       </div>
     )
 }

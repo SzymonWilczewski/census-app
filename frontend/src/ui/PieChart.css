@@ -1,6 +1,14 @@
+.chartContainer {
+    display: grid;
+    grid-template-columns: 300px 800px;
+    /* justify-items: center; */
+    /* background-color: aquamarine; */
+}
+
 .pie-titles {
     display: grid;
     grid-template-columns: 290px 280px 200px;
+    margin-top: 65px;
 }
 h3{
     padding-left: 60px;
