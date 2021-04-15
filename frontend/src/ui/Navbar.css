@@ -1,6 +1,5 @@
 .Navbar {
   background-color: #eee;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
