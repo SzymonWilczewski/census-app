@@ -28,3 +28,8 @@ export const seed = asyncHandler(async (req: Request, res: Response) => {
   await service.seed();
   res.send({ message: "seeded" });
 });
+
+export const statistics = asyncHandler(async (req: Request, res: Response) => {
+  const statistics = await service.statistics();
+  res.send({ statistics });
+});

@@ -1,10 +1,10 @@
 import bcryptjs from "bcryptjs";
 import createError from "http-errors";
-import { getConnection } from "typeorm";
-import { Role, User } from "../../entity/User";
+import { getRepository } from "typeorm";
+import { User } from "../../entity/User";
 
 export const getUserById = async function (id: number) {
-  const userRepository = getConnection().getRepository(User);
+  const userRepository = getRepository(User);
   const user = await userRepository.findOne(id);
 
   // omits password from user
@@ -13,7 +13,7 @@ export const getUserById = async function (id: number) {
 };
 
 export const login = async function (user: any) {
-  const userRepository = getConnection().getRepository(User);
+  const userRepository = getRepository(User);
   const dbUser = await userRepository.findOne({
     login: user.login,
   });
@@ -37,7 +37,7 @@ export const login = async function (user: any) {
 };
 
 export const register = async function (user: any) {
-  const userRepository = getConnection().getRepository(User);
+  const userRepository = getRepository(User);
 
   const isLoginOrEmailTaken = (
     await userRepository.find({
