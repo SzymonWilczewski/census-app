@@ -1,5 +1,5 @@
 import React from 'react'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
 
 function UnemploymentChart({data}) {
     const maz = data.filter(d => d["voivodeship"] === "mazowieckie")
