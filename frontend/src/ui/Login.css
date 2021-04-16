@@ -1,45 +1,36 @@
 .LoginContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100% - 76px);
-    flex-direction: column;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 76px);
+  flex-direction: column;
+  margin: auto;
+  margin-top: 350px;
   }
 
-  .Label {
-    width: 80%;
-    font-size: large;
-    display: flex;
-    flex-direction: column;
-    text-indent: 2px;
-    font-size: x-large;
-  }
+.Label {
+  width: 80%;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  text-indent: 2px;
+  font-size: x-large;
+}
 
-  .LoginBox {
-      width: 95%;
-      font-size: x-large;
-      margin: auto;
-  }
-  
-  .LoginButton {
-    border: 1px black solid;
-    border-radius: 5px;
-    transition: 0.3s;
-    padding: 10px;
-    margin: 10px;
-    width: 60%;
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: x-large;
-  }
-  
-  .LoginButton:hover {
-    background-color: navy;
-    color: white;
-  }
+.LoginBox {
+  width: 95%; 
+  font-size: x-large;
+  margin: 10px auto;
+}
 
-  .Error {
-    color: red;
-  }
+.LoginBox::placeholder {
+  opacity: 0.4;
+}
+
+.Error {
+  color: red;
+}
+
+#LogoLogging {
+  margin-top: 50px;
+}

@@ -1,9 +1,9 @@
 .Navbar {
-  background-color: #eee;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 50px;
   width: 100%;
   box-shadow: 0 4px 2px -2px gray;
 }
@@ -11,14 +11,14 @@
 .NavbarButton {
   color: black;
   text-align: center;
-  padding: 27px 30px;
+  padding: 14px 30px;
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
 }
 
 .NavbarButton:hover {
-  color: #1b98e0;
-  border-bottom: 3px solid #1b98e0;
-  background-color: #e8f1f2;
+  color: #14213d;
+  border-bottom: 3px solid #14213d;
+  background-color: #f0f0f0;
 }
