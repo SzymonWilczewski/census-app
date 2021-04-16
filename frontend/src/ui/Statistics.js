@@ -1,15 +1,36 @@
-import React from 'react'
-import Charts from './Charts';
-import UnemploymentChart from './UnemploymentChart';
-import data from '../surveys.json';
+import React from "react";
+import Charts from "./Charts";
+import UnemploymentChart from "./UnemploymentChart";
+import { useState, useEffect } from "react";
+
+import axios from "axios";
+import { API_URL } from "../config";
 
 function Statistics() {
-    return (
-        <div>
-            <Charts data={data}/>
-            <UnemploymentChart data={data}/>
-        </div>
-    )
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/survey/statistics`)
+      .then(({ data }) => {
+        setData(data.statistics);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  }, []);
+
+  return (
+    <div>
+      {(data && (
+        <>
+          <Charts data={data.education} />
+          <UnemploymentChart data={data.unemployment} />
+        </>
+      )) || <div>{error}</div>}
+    </div>
+  );
 }
 
-export default Statistics
+export default Statistics;

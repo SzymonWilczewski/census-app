@@ -17,10 +17,9 @@ const Login = ({ setUser }) => {
     axios
       .post(`${API_URL}/auth/login`, { login, password })
       .then((response) => {
-        if (response.status === 200) {
-          setUser(response.data.user);
-          history.push("/");
-        }
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        setUser(response.data.user);
+        history.push("/");
       })
       .catch(({ response }) => {
         response && changeError(response.data.message);

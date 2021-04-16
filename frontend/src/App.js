@@ -2,8 +2,8 @@ import "./App.css";
 import Navbar from "./ui/Navbar";
 import Home from "./ui/Home";
 import Login from "./ui/Login";
-import Statistics from './ui/Statistics';
-import { useEffect, useState } from "react";
+import Statistics from "./ui/Statistics";
+import { useState } from "react";
 import {
   Route,
   BrowserRouter as Router,
@@ -15,29 +15,22 @@ import { API_URL } from "./config";
 import axios from "axios";
 axios.defaults.withCredentials = true; // must be true
 
-function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  function fetchUser() {
-    axios
-      .get(`${API_URL}/auth`)
-      .then((response) => {
-        if (response.status === 200) {
-          setUser(response.data.user);
-        }
-      })
-      .catch((err) => console.log(err));
+function getUser() {
+  if (!!localStorage.getItem("user")) {
+    return JSON.parse(localStorage.getItem("user"));
   }
+  return null;
+}
+
+function App() {
+  const [user, setUser] = useState(getUser);
 
   function logout() {
     axios
       .get(`${API_URL}/auth/logout`)
       .then((response) => {
         if (response.status === 200) {
+          localStorage.removeItem("user");
           setUser(null);
         }
       })
@@ -49,11 +42,11 @@ function App() {
       <div className="App">
         <Navbar />
         {user && (
-          // tymczasowe wyswietlanie, zmiencie sobie to jakos potem
           <div>
-            <p>login: {user.login} &nbsp;
-            email: {user.email} &nbsp;
-            <button onClick={logout}> wyloguj </button></p>
+            <p>
+              login: {user.login} &nbsp; email: {user.email} &nbsp;
+              <button onClick={logout}> wyloguj </button>
+            </p>
           </div>
         )}
         <Switch>
