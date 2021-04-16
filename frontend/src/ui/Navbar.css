@@ -5,6 +5,7 @@
   justify-content: space-between;
   height: 76px;
   width: 100%;
+  box-shadow: 0 4px 2px -2px gray;
 }
 
 .NavbarButton {
@@ -14,4 +15,10 @@
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
+}
+
+.NavbarButton:hover {
+  color: #1b98e0;
+  border-bottom: 3px solid #1b98e0;
+  background-color: #e8f1f2;
 }
