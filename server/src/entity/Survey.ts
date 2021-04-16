@@ -84,7 +84,7 @@ export class Survey {
     enum: ProfessionalActivity,
     default: ProfessionalActivity.UNEMPLOYED,
   })
-  professionalActiviy!: ProfessionalActivity;
+  professionalActivity!: ProfessionalActivity;
 
   @Column()
   isDisabled!: boolean;
