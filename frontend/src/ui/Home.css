@@ -1,38 +1,111 @@
 .Home {
+  width: 100%;
   margin: auto;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
-  height: calc(100% - 76px);
+  grid-template-columns: 50% 50%;
+  height: calc(100% - 50px);
+}
+
+.HomeContainer {
+  height: 100%;
+  background-color: #003459;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.75);
+  clip-path: inset(0px -15px 0px 0px);
 }
 
 .Login {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: calc(100% - 51px);
 }
 
-.Search {
+.Statistics {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  height: calc(100% - 51px);
 }
 
 .LoginButton {
-  border: 1px black solid;
-  border-radius: 5px;
-  transition: 0.3s;
-  padding: 10px;
+  border: 1px solid #fca311;
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: 'montserrat';
+  cursor: pointer;
   margin: 10px;
-  width: 100%;
   text-decoration: none;
-  color: black;
+  color: #fca311;
   text-align: center;
+  transition: 0.8s;
+  overflow: hidden;
+  position: relative;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#secondVariantButton {
+  color: #fff;
+  margin-bottom: 265px;
 }
 
 .LoginButton:hover {
-  background-color: navy;
-  color: white;
+  color: #003459;
+}
+
+#secondVariantButton:hover {
+  color: #fca311;
+}
+
+.LoginButton::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  height: 0%;
+  background: #fca311;
+  z-index: -1;
+  transition: 0.8s;
+}
+
+#secondVariantButton::before {
+  height: 180%;
+}
+
+.LoginButton:hover::before {
+  height: 180%;
+}
+
+#secondVariantButton:hover::before {
+  height: 0%;
+}
+
+.Writing {
+  margin-top: 200px;
+  text-transform: uppercase;
+  font-size: xx-large;
+  letter-spacing: 2px;
+}
+
+.nspLogo {
+  width: 300px;
+  height: 50px;
+}
+
+.AdminLogging {
+  color: #003459;
+  font-size: 25px;
+  margin-top: 300px;
 }

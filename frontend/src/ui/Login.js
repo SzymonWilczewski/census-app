@@ -29,29 +29,28 @@ const Login = ({ setUser }) => {
   return (
     <div className="LoginContainer">
       <label className="Label">
-        Login
-        <br />
         <input
           className="LoginBox"
+          placeholder="login"
           onChange={(e) => handleChangeLogin(e.target.value)}
         />
       </label>
 
       <label className="Label">
-        Hasło
-        <br />
         <input
           className="LoginBox"
           type="password"
+          placeholder="hasło"
           onChange={(e) => handleChangePassword(e.target.value)}
         />
       </label>
 
       {error && <div className="Error">{error}</div>}
 
-      <button className="LoginButton" onClick={handleClick}>
+      <button className="LoginButton" id="secondVariantButton" onClick={handleClick}>
         Zaloguj
       </button>
+      <img id="LogoLogging" className="nspLogo" src="https://spis.gov.pl/wp-content/uploads/2021/01/cropped-logo-nsp.png" alt="nsp-logo"/>
     </div>
   );
 };

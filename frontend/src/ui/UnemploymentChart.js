@@ -1,4 +1,5 @@
-import { BarChart, Bar, XAxis, YAxis, Legend } from "recharts";
+import React from 'react'
+import { BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
 
 function UnemploymentChart({ data }) {
   return (

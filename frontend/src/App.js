@@ -40,7 +40,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Route path="/" component={Navbar} />
         {user && (
           <div>
             <p>
@@ -50,10 +50,10 @@ function App() {
           </div>
         )}
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/login" render={() => <Login setUser={setUser} />} />
-          <Route path="/statistics" exact component={Statistics} />
-          <Redirect to={"/"} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" render={() => <Login setUser={setUser} />} />
+          <Route exact path="/statistics" component={Statistics} />
+          <Redirect to="/" />
         </Switch>
       </div>
     </Router>
