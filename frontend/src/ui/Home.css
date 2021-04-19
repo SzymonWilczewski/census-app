@@ -38,6 +38,7 @@
 
 .LoginButton {
   border: 1px solid #fca311;
+  min-height: 23px;
   background: none;
   padding: 10px 20px;
   font-size: 20px;
@@ -56,7 +57,6 @@
 
 #secondVariantButton {
   color: #fff;
-  margin-bottom: 265px;
 }
 
 .LoginButton:hover {
@@ -107,5 +107,5 @@
 .AdminLogging {
   color: #003459;
   font-size: 25px;
-  margin-top: 300px;
+  margin-top: 175px;
 }

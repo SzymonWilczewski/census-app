@@ -17,9 +17,10 @@ const Login = ({ setUser }) => {
     axios
       .post(`${API_URL}/auth/login`, { login, password })
       .then((response) => {
-        localStorage.setItem("user", JSON.stringify(response.data.user));
-        setUser(response.data.user);
-        history.push("/");
+        if (response.status === 200) {
+          setUser(response.data.user);
+          history.push("/");
+        }
       })
       .catch(({ response }) => {
         response && changeError(response.data.message);
@@ -28,29 +29,32 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="LoginContainer">
-      <label className="Label">
-        <input
-          className="LoginBox"
-          placeholder="login"
-          onChange={(e) => handleChangeLogin(e.target.value)}
-        />
-      </label>
+      <div className="LoginBoxes">
+        <label className="Label">
+          <input
+            className="LoginBox"
+            placeholder="login"
+            onChange={(e) => handleChangeLogin(e.target.value)}
+          />
+        </label>
 
-      <label className="Label">
-        <input
-          className="LoginBox"
-          type="password"
-          placeholder="hasło"
-          onChange={(e) => handleChangePassword(e.target.value)}
-        />
-      </label>
+        <label className="Label">
+          <input
+            className="LoginBox"
+            type="password"
+            placeholder="hasło"
+            onChange={(e) => handleChangePassword(e.target.value)}
+          />
+        </label>
 
-      {error && <div className="Error">{error}</div>}
+        {error && <div className="Error">{error}</div>}
 
-      <button className="LoginButton" id="secondVariantButton" onClick={handleClick}>
-        Zaloguj
-      </button>
-      <img id="LogoLogging" className="nspLogo" src="https://spis.gov.pl/wp-content/uploads/2021/01/cropped-logo-nsp.png" alt="nsp-logo"/>
+        <button className="LoginButton" id="secondVariantButton" onClick={handleClick}>
+          Zaloguj
+        </button>
+      </div>
+
+      <img className="nspLogo" src="https://spis.gov.pl/wp-content/uploads/2021/01/cropped-logo-nsp.png" alt="nsp-logo"/>
     </div>
   );
 };
