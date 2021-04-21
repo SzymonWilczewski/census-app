@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Urząd Statystyczny w Białymstoku",
+    "address" : "ul. Krakowska 13, 15-875 Białystok",
+    "email": "SekretariatUSBST@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.15-15.15"
+  },
+  {
+    "name": "Urząd Statystyczny w Bydgoszczy",
+    "address" : "ul. Ks. Stanisława Konarskiego 1-3, 85-066 Bydgoszcz",
+    "email": "SekretariatUSBDG@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Gdańsku",
+    "address" : "ul. Danusi 4, 80-434 Gdańsk",
+    "email": "SekretariatUSGDK@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Katowicach",
+    "address" : "ul. Owocowa 3, 40-158 Katowice",
+    "email": "SekretariatUsKce@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Kielcach",
+    "address" : "ul. Zygmunta Wróblewskiego 2, 25-369 Kielce",
+    "email": "sekretariatuskie@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek  7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Krakowie",
+    "address" : "ul. Kazimierza Wyki 3, 31-223 Kraków",
+    "email": "SekretariatUSKRK@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Lublinie",
+    "address" : "ul. Stanisława Leszczyńskiego 48, 20-068 Lublin",
+    "email": "sekretariatUSlub@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Łodzi",
+    "address" : "ul. Suwalska 29, 93-176 Łódź",
+    "email": "sekretariatusldz@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.30-15.30"
+  },
+  {
+    "name": "Urząd Statystyczny w Olsztynie",
+    "address" : "ul. Tadeusza Kościuszki 78/82, 10-555 Olsztyn",
+    "email": "SekretariatUSOLS@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Opolu",
+    "address" : "ul. ks. Hugona Kołłątaja 5B, 45-064 Opole",
+    "email": "SekretariatUSopl@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Poznaniu",
+    "address" : "ul. Wojska Polskiego 27/29, 60-624 Poznań",
+    "email": "SekretariatUSPOZ@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Rzeszowie",
+    "address" : "ul. Jana III Sobieskiego 10, 35-959 Rzeszów",
+    "email": "sekretariatusrze@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Szczecinie",
+    "address" : "ul. Jana Matejki 22, 70-530 Szczecin",
+    "email": "SekretariatUSSZC@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  },
+  {
+    "name": "Urząd Statystyczny w Warszawie",
+    "address" : "ul. 1 Sierpnia 21, 02-134 Warszawa",
+    "email": "sekretariatuswaw@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.30-15.30"
+  },
+  {
+    "name": "Urząd Statystyczny we Wrocławiu",
+    "address" : "ul. Oławska 31, 50-950 Wrocław",
+    "email": "sekretariatuswro@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.15-15.15"
+  },
+  {
+    "name": "Urząd Statystyczny w Zielonej Górze",
+    "address" : "ul. Spokojna 1, 65-954 Zielona Góra",
+    "email": "SekretariatUSZGR@stat.gov.pl",
+    "businessHours": "poniedziałek-piątek 7.00-15.00"
+  }
+]

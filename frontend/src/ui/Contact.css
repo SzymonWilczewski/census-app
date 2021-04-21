@@ -1,0 +1,16 @@
+.Contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 36px;
+  row-gap: 36px;
+  margin: 25px 20%;
+}
+
+.Contact div {
+  margin: auto 0;
+}
+
+.Email {
+  text-decoration: none;
+  color: #737373;
+}
