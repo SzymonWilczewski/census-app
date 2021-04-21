@@ -11,14 +11,14 @@ const Navbar = () => (
       </a>
     </div>
     <div>
-      <a href="/" className="NavbarButton">
+      <a href="/news" className="NavbarButton">
         WYDARZENIA
       </a>
-      <a href="/" className="NavbarButton">
+      <a href="/offices" className="NavbarButton">
         URZĘDY STATYSTYCZNE
       </a>
-      <a href="/" className="NavbarButton">
-        DLA MEDIÓW
+      <a href="/contact" className="NavbarButton">
+        KONTAKT
       </a>
     </div>
   </div>

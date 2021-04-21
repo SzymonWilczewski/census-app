@@ -3,6 +3,9 @@ import Navbar from "./ui/Navbar";
 import Home from "./ui/Home";
 import Login from "./ui/Login";
 import Statistics from "./ui/Statistics";
+import News from "./ui/News";
+import Offices from "./ui/Offices";
+import Contact from "./ui/Contact";
 import { useState } from "react";
 import {
   Route,
@@ -53,6 +56,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" render={() => <Login setUser={setUser} />} />
           <Route exact path="/statistics" component={Statistics} />
+          <Route exact path="/news" component={News} />
+          <Route exact path="/offices" component={Offices} />
+          <Route exact path="/contact" component={Contact} />
           <Redirect to="/" />
         </Switch>
       </div>
