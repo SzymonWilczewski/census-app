@@ -16,6 +16,7 @@ Endpoints
 - GET `/survey/:id`
 - POST `/survey`
 - PATCH `/survey/:id`
+- DELETE `/survey/:id`
 
 #### Example user
 

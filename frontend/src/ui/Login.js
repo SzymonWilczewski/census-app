@@ -28,6 +28,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="LoginContainer">
+      <h1>Zaloguj się do systemu jako administrator lub ankieter.</h1>
       <div className="LoginBoxes">
         <label className="Label">
           <input
@@ -36,7 +37,6 @@ const Login = ({ setUser }) => {
             onChange={(e) => handleChangeLogin(e.target.value)}
           />
         </label>
-
         <label className="Label">
           <input
             className="LoginBox"
@@ -45,15 +45,20 @@ const Login = ({ setUser }) => {
             onChange={(e) => handleChangePassword(e.target.value)}
           />
         </label>
-
         {error && <div className="Error">{error}</div>}
-
-        <button className="LoginButton" id="secondVariantButton" onClick={handleClick}>
+        <button
+          className="LoginButton"
+          id="secondVariantButton"
+          onClick={handleClick}
+        >
           Zaloguj
         </button>
       </div>
-
-      <img className="nspLogo" src="https://spis.gov.pl/wp-content/uploads/2021/01/cropped-logo-nsp.png" alt="nsp-logo"/>
+      <img
+        className="nspLogo"
+        src="https://spis.gov.pl/wp-content/uploads/2021/01/cropped-logo-nsp.png"
+        alt="nsp-logo"
+      />
     </div>
   );
 };
