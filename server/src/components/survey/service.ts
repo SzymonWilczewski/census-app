@@ -1,4 +1,4 @@
-import { getConnection, getRepository, getManager } from "typeorm";
+import { getRepository } from "typeorm";
 import { Survey } from "../../entity/Survey";
 import createError from "http-errors";
 import { generateSurvey } from "../../utils/db-seed";
@@ -12,6 +12,10 @@ export const seed = async function () {
 export const add = async function (survey: any) {
   return await getRepository(Survey).save(survey);
 };
+
+export const deleteOne = async function(id: number) {
+  return await getRepository(Survey).delete(id);
+}
 
 export const getAll = async function () {
   return await getRepository(Survey).find();

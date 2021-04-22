@@ -7,6 +7,12 @@ export const add = asyncHandler(async (req: Request, res: Response) => {
   res.send({ survey });
 });
 
+export const deleteOne = asyncHandler(async (req: Request, res: Response) => {
+  const survey = await service.deleteOne(parseInt(req.params.id));
+  res.send({ survey });
+});
+
+
 export const getAll = asyncHandler(async (req: Request, res: Response) => {
   const surveys = await service.getAll();
   res.send({ surveys });
