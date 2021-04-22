@@ -109,3 +109,12 @@
   font-size: 25px;
   margin-top: 175px;
 }
+
+.InfoNSP {
+  text-align: center;
+  max-width: 850px;
+  line-height: 175%;
+  border: 2px solid #fca311;
+  padding: 15px;
+  border-radius: 10px;
+}

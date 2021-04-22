@@ -8,7 +8,7 @@ const Home = () => (
         <a href="/statistics" className="LoginButton">
           Statystyki
         </a>
-        <p>Zobacz szczegółowe statystyki dotyczące Narodowego Spisu Powszechnego Ludności i Mieszkań 2021.</p>
+        <p class="InfoNSP">Zobacz szczegółowe statystyki dotyczące Narodowego Spisu Powszechnego Ludności i Mieszkań 2021. <br/>Spisy powszechne w Polsce dostarczają kluczowych informacji statystycznych o demografii Polski. Specjalnym rodzajem jest przeprowadzany okresowo, na ogół co 10 lat, Narodowy Spis Powszechny. Spis taki jest najobszerniejszą informacją statystyczną o ludności, jej warunkach bytowania i o innych objętych nim zagadnieniach. W Polsce Narodowe Spisy Powszechne przeprowadza Główny Urząd Statystyczny. </p>
       </div>
     </div>
     <div className="Login">
