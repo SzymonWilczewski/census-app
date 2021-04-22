@@ -2,9 +2,19 @@ import "./Survey.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { API_URL } from "../config";
 import axios from "axios";
-axios.defaults.withCredentials = true;
+import { useEffect } from "react";
+import { isAuth, getUser } from "../utils";
+import { useHistory } from "react-router";
 
 const Survey = () => {
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!isAuth() || getUser().role === "admin") {
+      history.push("/");
+    }
+  }, []);
+
   const pesel = (pesel) => {
     let year = Math.trunc(pesel.slice(0, 2));
     let month = Math.trunc(pesel.slice(2, 4));
