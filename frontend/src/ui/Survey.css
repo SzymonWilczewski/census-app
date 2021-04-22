@@ -1,0 +1,82 @@
+.Form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-items: center;
+  row-gap: 50px;
+  margin: 50px 15%;
+}
+
+.FieldDiv {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-size: large;
+  text-indent: 2px;
+  font-size: x-large;
+}
+
+.FieldDiv > p {
+  margin: 0;
+}
+
+.Field {
+  font-size: x-large;
+}
+
+.SubmitButton {
+  border: 1px solid #fca311;
+  min-height: 23px;
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "montserrat";
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  transition: 0.8s;
+  overflow: hidden;
+  position: absolute;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.SubmitButton:hover {
+  color: #fca311;
+}
+
+.SubmitButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+  border-radius: 0 0 50% 50%;
+  background: #fca311;
+  z-index: -1;
+  transition: 0.8s;
+  height: 200%;
+}
+
+.SubmitButton:hover::before {
+  height: 0%;
+}
+
+.SubmitButtonDiv {
+  position: relative;
+  height: 50px;
+  width: 200px;
+  grid-column: 1 / -1;
+}
+
+input[type="date"]:invalid {
+  color: gray;
+}
+
+select:required:invalid {
+  color: gray;
+}
