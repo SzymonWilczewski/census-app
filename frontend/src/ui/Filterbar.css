@@ -1,0 +1,22 @@
+.Filterbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-top: 2px;
+    
+  }
+
+.FilterButton {
+    border: none;
+    background-color: #fff;
+}
+
+.FilterButton:hover {
+  opacity: 0.5;
+}
+  
