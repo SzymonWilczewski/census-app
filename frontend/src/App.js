@@ -5,9 +5,9 @@ import Login from "./ui/Login";
 import Statistics from "./ui/Statistics";
 import News from "./ui/News";
 import Offices from "./ui/Offices";
-import Panel from "./ui/Panel";
-import Survey from "./ui/Survey";
 import Contact from "./ui/Contact";
+import Survey from "./ui/Survey";
+import Panel from "./ui/Panel";
 import { useState } from "react";
 import { getUser } from "./utils";
 import {
@@ -15,7 +15,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Redirect,
-  useHistory,
 } from "react-router-dom";
 import { API_URL } from "./config";
 
@@ -24,8 +23,6 @@ axios.defaults.withCredentials = true; // must be true
 
 function App() {
   const [user, setUser] = useState(getUser);
-
-  const history = useHistory();
 
   function logout() {
     axios
@@ -44,18 +41,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route path="/" render={() => <Navbar user={user} />} />
-        {user && (
-          <div>
-            <p className="UserInfo" >
-              login: {user.login} &nbsp; email: {user.email} &nbsp; rola:{" "}
-              {user.role === "pollster" ? "ankieter" : "admin"}
-              <button onClick={logout}> wyloguj </button>
-            </p>
-          </div>
-        )}
+        <Route path="/" render={() => <Navbar user={user} logout={logout} />} />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={() => <Home user={user} />} />
           <Route
             exact
             path="/login"
@@ -65,8 +53,8 @@ function App() {
           <Route exact path="/news" component={News} />
           <Route exact path="/offices" component={Offices} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/survey" component={Survey} />
           <Route exact path="/panel" component={Panel} />
-          <Route exact path="/add" component={Survey} />
           <Redirect to="/" />
         </Switch>
       </div>

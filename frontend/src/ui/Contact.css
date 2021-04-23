@@ -1,8 +1,7 @@
 .Contact {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 36px;
-  row-gap: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 36px;
   margin: 25px 20%;
 }
 

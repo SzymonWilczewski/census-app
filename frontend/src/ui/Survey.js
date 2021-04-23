@@ -13,7 +13,7 @@ const Survey = () => {
     if (!isAuth() || getUser().role === "admin") {
       history.push("/");
     }
-  }, []);
+  }, [history]);
 
   const pesel = (pesel) => {
     let year = Math.trunc(pesel.slice(0, 2));

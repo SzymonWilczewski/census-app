@@ -2,12 +2,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-.UserInfo {
-  padding-left: 70px;
-}
-
-button {
-  margin-left: 10px;
+  min-height: 855px;
+  min-width: 855px;
 }

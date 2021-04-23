@@ -3,15 +3,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  height: 76px;
   width: 100%;
   box-shadow: 0 4px 2px -2px gray;
+}
+
+.NavbarButtons {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  place-items: center;
+  height: 76px;
 }
 
 .NavbarButton {
   color: black;
   text-align: center;
-  padding: 14px 30px;
+  padding: 27px 30px;
   text-decoration: none;
   font-size: 17px;
   font-weight: 500;
@@ -20,5 +27,58 @@
 .NavbarButton:hover {
   color: #14213d;
   border-bottom: 3px solid #14213d;
+  margin-bottom: -3px;
   background-color: #f0f0f0;
+}
+
+.NavbarDropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.NavbarDropdownButton {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: 500;
+  padding: 18px;
+}
+
+.NavbarDropdownButton:hover {
+  color: #14213d;
+  border-bottom: 3px solid #14213d;
+  margin-bottom: -3px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.NavbarDropdownHidden {
+  display: none;
+  position: absolute;
+  background-color: #f0f0f0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: -100px;
+  width: 176px;
+  height: 176px;
+}
+
+.NavbarDropdown:hover .NavbarDropdownHidden {
+  display: block;
+}
+
+.NavbarDropdownContent {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.NavbarDropdownContent > * {
+  margin: 0;
+}
+
+.LoginBoxDiv {
+  width: 150px;
+  height: 50px;
 }

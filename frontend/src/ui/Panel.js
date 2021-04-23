@@ -30,7 +30,7 @@ export default function Panel() {
           setError(err.message);
         });
     }
-  }, []);
+  }, [history]);
 
   return (
     <div>

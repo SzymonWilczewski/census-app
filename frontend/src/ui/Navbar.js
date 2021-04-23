@@ -1,8 +1,6 @@
 import "./Navbar.css";
-import { getUser } from "../utils";
-import { useState } from "react";
 
-function Navbar({ user }) {
+function Navbar({ user, logout }) {
   return (
     <div className="Navbar">
       <div>
@@ -13,15 +11,7 @@ function Navbar({ user }) {
           />
         </a>
       </div>
-      <div>
-        {user && (
-          <a
-            href={(user.role == "admin" && "/panel") || "/add"}
-            className="NavbarButton"
-          >
-            {user.role === "admin" ? "PANEL" : "DODAJ"}
-          </a>
-        )}
+      <div className="NavbarButtons">
         <a href="/news" className="NavbarButton">
           WYDARZENIA
         </a>
@@ -31,6 +21,26 @@ function Navbar({ user }) {
         <a href="/contact" className="NavbarButton">
           KONTAKT
         </a>
+        {user && (
+          <div className="NavbarDropdown">
+            <i class="fas fa-user-circle NavbarDropdownButton"></i>
+            <div className="NavbarDropdownHidden">
+              <div className="NavbarDropdownContent">
+                <h4>Witaj {user.login}!</h4>
+                <p>Email: {user.email}</p>
+                <div className="LoginBoxDiv">
+                  <button
+                    className="LoginButton"
+                    id="secondVariantButton"
+                    onClick={logout}
+                  >
+                    Wyloguj
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
