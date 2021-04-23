@@ -53,6 +53,26 @@
   position: relative;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom: 225px;
+}
+
+.StatsButton {
+  border: 1px solid #fca311;
+  min-height: 23px;
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: 'montserrat';
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: none;
+  color: #fca311;
+  text-align: center;
+  transition: 0.8s;
+  overflow: hidden;
+  position: relative;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 #secondVariantButton {
