@@ -19,7 +19,7 @@ const Login = ({ setUser }) => {
       .then((response) => {
         localStorage.setItem("user", JSON.stringify(response.data.user));
         setUser(response.data.user);
-        response.data.user.role === "admin" ? history.push("/panel") : history.push("/news");
+        history.push("/");
       })
       .catch(({ response }) => {
         response && changeError(response.data.message);
@@ -37,6 +37,7 @@ const Login = ({ setUser }) => {
             onChange={(e) => handleChangeLogin(e.target.value)}
           />
         </label>
+
         <label className="Label">
           <input
             className="LoginBox"
@@ -45,15 +46,20 @@ const Login = ({ setUser }) => {
             onChange={(e) => handleChangePassword(e.target.value)}
           />
         </label>
+
         {error && <div className="Error">{error}</div>}
-        <button
-          className="LoginButton"
-          id="secondVariantButton"
-          onClick={handleClick}
-        >
-          Zaloguj
-        </button>
+
+        <div className="LoginButtonDiv">
+          <button
+            className="LoginButton"
+            id="secondVariantButton"
+            onClick={handleClick}
+          >
+            Zaloguj
+          </button>
+        </div>
       </div>
+
       <img
         className="nspLogo"
         src="https://spis.gov.pl/wp-content/uploads/2021/01/cropped-logo-nsp.png"
