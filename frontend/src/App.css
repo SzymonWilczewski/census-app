@@ -3,3 +3,11 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.UserInfo {
+  padding-left: 70px;
+}
+
+button {
+  margin-left: 10px;
+}

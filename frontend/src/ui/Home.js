@@ -5,10 +5,10 @@ const Home = () => (
     <div className="HomeContainer">
       <p className="Writing">Narodowy Spis Powszechny</p>
       <div className="Statistics">
-        <a href="/statistics" className="LoginButton">
+        <a href="/statistics" className="StatsButton">
           Statystyki
         </a>
-        <p class="InfoNSP">
+        <p className="InfoNSP">
           Zobacz szczegółowe statystyki dotyczące Narodowego Spisu Powszechnego
           Ludności i Mieszkań 2021. <br />
           Spisy powszechne w Polsce dostarczają kluczowych informacji

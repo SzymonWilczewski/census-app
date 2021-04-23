@@ -47,7 +47,7 @@ function App() {
         <Route path="/" render={() => <Navbar user={user} />} />
         {user && (
           <div>
-            <p>
+            <p className="UserInfo" >
               login: {user.login} &nbsp; email: {user.email} &nbsp; rola:{" "}
               {user.role === "pollster" ? "ankieter" : "admin"}
               <button onClick={logout}> wyloguj </button>

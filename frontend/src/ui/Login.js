@@ -19,7 +19,7 @@ const Login = ({ setUser }) => {
       .then((response) => {
         localStorage.setItem("user", JSON.stringify(response.data.user));
         setUser(response.data.user);
-        history.push("/");
+        response.data.user.role === "admin" ? history.push("/panel") : history.push("/news");
       })
       .catch(({ response }) => {
         response && changeError(response.data.message);
